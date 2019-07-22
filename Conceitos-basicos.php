@@ -7,11 +7,13 @@ echo "Olá mundo!\n";
 de vários linhas*/
 
 //VARIÁVEIS
+echo "VARIÁVEIS\n";
 $idade = 21;
 echo $idade;
 echo "\n";
 
 //OPERAÇÕES
+echo "OPERAÇÕES\n";
 $idadeSoma = $idade + 10;   //Soma
 echo $idadeSoma;
 echo "\n";
@@ -32,6 +34,7 @@ echo $idadeResto;
 echo "\n";
 
 //TIPOS DE VARIÁVEIS
+echo "TIPOS DE VARIÁVEIS\n";
 $idade = 21;
 echo gettype($idade);   //Inteiro
 echo "\n";
@@ -46,3 +49,28 @@ $boolean = true;
 $boolean = false;
 echo gettype($boolean);   //Boolean
 echo "\n";
+
+//STRINGS
+echo "STRINGS\n";
+$idade = 21;
+echo 'Olá mundo! Minha idade é ' . $idade . ' anos';    //Aspas simples
+echo "\n";
+echo "Olá mundo! Minha idade é $idade anos\n";          //Aspas duplas
+echo "Olá mundo! Minha idade é \"$idade\" anos";
+echo "\n\t";                                            //Quebra de linha e tab
+echo "Outra linha" . PHP_EOL;                           //Quebra de linha PHP_EOL
+echo "Usando PHP_EOL";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
