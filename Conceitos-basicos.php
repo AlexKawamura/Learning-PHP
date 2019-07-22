@@ -101,3 +101,34 @@ if ($idade >= 18) { //Mais de uma linha
     echo "Você tem $idade anos e está acompanhado. Pode entrar" . PHP_EOL;
 else
     echo "Você só tem $idade anos ou não está acompanhado. Não pode entrar" . PHP_EOL;
+
+//LAÇO DE REPETIÇÃO
+echo "LAÇO DE REPETIÇÃO\n";
+$contador = 1;
+/*WHILE*/
+echo "WHILE\n";
+while ($contador <= 10) {
+    echo "#$contador" . PHP_EOL;
+    $contador = $contador + 1;
+}
+/*FOR*/
+echo "FOR\n";
+for ($contador = 1; $contador <= 10; $contador++) {
+    echo "#$contador" . PHP_EOL;
+}
+echo "CONTINUE\n";
+for ($contador = 1; $contador <= 10; $contador++) {
+    if ($contador == 6) {
+        echo "Pulou o 6\n";
+        continue;
+    }
+    echo "#$contador" . PHP_EOL;
+}
+echo "BREAK\n";
+for ($contador = 1; $contador <= 10; $contador++) {
+    if ($contador == 6) {
+        echo "Parou o laço\n";
+        break;
+    }
+    echo "#$contador" . PHP_EOL;
+}
