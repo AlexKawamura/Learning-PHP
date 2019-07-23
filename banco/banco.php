@@ -34,18 +34,31 @@ $contasCorrentes['123.256.789-12'] = depositar(
                                                 $contasCorrentes['123.256.789-12'],
                                                 -900);
 
-echo exibeMensagem("--Estrutura de string simples--");
+//PASSANDO PARÂMETRO POR REFERÊNCIA
+titularMaiusculo($contasCorrentes['123.256.789-12']);
 
 foreach ($contasCorrentes as $cpf => $conta) {
+//    ESTRUTURA DE STRING SIMPLE
+//    echo exibeMensagem(
+//        "$cpf $conta[titular] $conta[saldo]"
+//    );
+//    ESTRUTURA DE STRING COMPLEXA
     echo exibeMensagem(
-        "$cpf $conta[titular] $conta[saldo]"
+        "$cpf {$conta['titular']} {$conta['saldo']}"
     );
 }
 
-echo exibeMensagem("--Estrutura de string complexa--");
+//USO DA FUNÇÃO LIST
+echo "\nUSO DA FUNCAO LIST\n";
+//$idadeList = [21, 23, 19, 25, 30, 41, 18];
+//
+//list($idadeVinicius, $idadeJoao, $idadeMaria) = $idadeList;
 
 foreach ($contasCorrentes as $cpf => $conta) {
+//  list('titular' => $titular, 'saldo' => $saldo) = $conta;
+    ['titular' => $titular, 'saldo' => $saldo] = $conta;
+
     echo exibeMensagem(
-        "$cpf {$conta['titular']} {$conta['saldo']}"
+        "$cpf $titular $saldo"
     );
 }

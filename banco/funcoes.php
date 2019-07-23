@@ -24,3 +24,13 @@ function depositar($conta, $deposito) {
     }
     return $conta;
 }
+
+//PASSAGEM DE PARÂMETRO POR VALOR
+//function titularMaiusculo (array $conta) {
+//    $conta['titular'] = strtoupper($conta['titular']);
+//}
+
+//PASSAGEM DE PARÂMETRO POR REFERÊNCIA (&)
+function titularMaiusculo (array &$conta) {
+    $conta['titular'] = mb_strtoupper($conta['titular']);
+}
