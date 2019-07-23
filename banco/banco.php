@@ -1,29 +1,12 @@
 <?php
-//FUNÇÕES e SUBROTINAS
+//INCLUDE da apenas um WARNING, usado para arquivos não necessários para o código
+//include 'funcoes.php';
 
-function exibeMensagem(string $mensagem):string {
-    return $mensagem . PHP_EOL;
-}
+//REQUIRE da um ERRO, usado para arquivos essenciais para o código
+require 'funcoes.php';
 
-//FUNÇÃO ESPECIFICANDO OS PARÂMETROS E RETORNO
-function sacar(array $conta, float $saque):array {
-    if ($saque > $conta['saldo']) {
-        echo exibeMensagem("Voce não pode sacar este valor");
-    } else {
-        $conta['saldo'] -= $saque;
-    }
-    return $conta;
-}
-
-//FUNÇÃO SEM ESPECIFICAR OS PARÂMETROS E RETORNO
-function depositar($conta, $deposito) {
-    if ($deposito > 0) {
-        $conta['saldo'] += $deposito;
-    } else {
-        echo exibeMensagem("Depositos devem ser positivos");
-    }
-    return $conta;
-}
+//REQUIRE_ONCE realiza a importação uma única vez no código, verificando se já foi importada
+require_once 'funcoes.php';
 
 $contasCorrentes = [
     '123.456.789-10' => [
