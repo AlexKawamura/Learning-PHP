@@ -49,8 +49,20 @@ $contasCorrentes['123.456.689-11'] = sacar(
 
 $contasCorrentes['123.256.789-12'] = depositar(
                                                 $contasCorrentes['123.256.789-12'],
-                                                900);
+                                                -900);
+
+echo exibeMensagem("--Estrutura de string simples--");
 
 foreach ($contasCorrentes as $cpf => $conta) {
-    echo exibeMensagem($cpf . " " . $conta['titular'] . " " . $conta['saldo']);
+    echo exibeMensagem(
+        "$cpf $conta[titular] $conta[saldo]"
+    );
+}
+
+echo exibeMensagem("--Estrutura de string complexa--");
+
+foreach ($contasCorrentes as $cpf => $conta) {
+    echo exibeMensagem(
+        "$cpf {$conta['titular']} {$conta['saldo']}"
+    );
 }
