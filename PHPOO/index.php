@@ -19,6 +19,7 @@ $contaMaria = new contaCorrente(
 //$contaMaria->numero = "343435-4";
 //$contaMaria->saldo = 1500.00;
 
+//UTILIZANDO MÉTODO COM RETURN THIS
 var_dump($contaJoao);
 echo "<br>";
 //Possível apenas com return $this
@@ -26,17 +27,26 @@ $contaJoao->sacar(400.90)->depositar(30.90);
 var_dump($contaJoao);
 echo  "<br>";
 
+//UTILIZANDO MÉTODO SEM RETURN THIS
 //var_dump($contaJoao);
 //$contaJoao->sacar(400.90);
 //var_dump($contaJoao);
 //$contaJoao->depositar(400.90);
 //var_dump($contaJoao);
 
-echo "Saldo do João: " . $contaJoao->getSaldo() . "<br>";
-echo "Titular da conta: " . $contaMaria->getTitular() . "<br>";
+//USANDO GETTERS E SETTERS
+//echo "Saldo do João: " . $contaJoao->getSaldo() . "<br>";
+//echo "Titular da conta: " . $contaMaria->getTitular() . "<br>";
+//
+//var_dump($contaJoao);
+//echo  "<br>";
+//$contaJoao->setNumero("00000");
+//var_dump($contaJoao);
+//echo  "<br>";
 
-var_dump($contaJoao);
-echo  "<br>";
-$contaJoao->setNumero("00000");
-var_dump($contaJoao);
-echo  "<br>";
+//USANDO MÉTODOS MÁGICOS GETTER E SETTER
+echo $contaMaria->titular . "<br>";
+
+echo $contaJoao->saldo . "<br>";
+$contaJoao->saldo = 0;
+echo $contaJoao->saldo . "<br>";
