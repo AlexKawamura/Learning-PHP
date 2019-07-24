@@ -2,7 +2,8 @@
 //FUNÇÕES e SUBROTINAS
 
 function exibeMensagem(string $mensagem):string {
-    return $mensagem . PHP_EOL;
+    //return $mensagem . PHP_EOL;
+    return $mensagem . '<br>'; //Quebra de linha em HTML
 }
 
 //FUNÇÃO ESPECIFICANDO OS PARÂMETROS E RETORNO
@@ -33,4 +34,9 @@ function depositar($conta, $deposito) {
 //PASSAGEM DE PARÂMETRO POR REFERÊNCIA (&)
 function titularMaiusculo (array &$conta) {
     $conta['titular'] = mb_strtoupper($conta['titular']);
+}
+
+function exibeConta(array $conta) {
+    ['titular' => $titular, 'saldo' => $saldo] = $conta;
+    echo "<li>Titular: $titular . Saldo: $saldo</li>";
 }

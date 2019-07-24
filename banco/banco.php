@@ -68,6 +68,7 @@ echo "\nREMOVENDO UM DADO\n";
 unset($contasCorrentes['123.456.689-11']);
 
 foreach ($contasCorrentes as $cpf => $conta) {
+//  list('titular' => $titular, 'saldo' => $saldo) = $conta;
     ['titular' => $titular, 'saldo' => $saldo] = $conta;
 
     echo exibeMensagem(
