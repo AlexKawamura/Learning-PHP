@@ -20,4 +20,23 @@ $contaMaria = new contaCorrente(
 //$contaMaria->saldo = 1500.00;
 
 var_dump($contaJoao);
-var_dump($contaMaria);
+echo "<br>";
+//Possível apenas com return $this
+$contaJoao->sacar(400.90)->depositar(30.90);
+var_dump($contaJoao);
+echo  "<br>";
+
+//var_dump($contaJoao);
+//$contaJoao->sacar(400.90);
+//var_dump($contaJoao);
+//$contaJoao->depositar(400.90);
+//var_dump($contaJoao);
+
+echo "Saldo do João: " . $contaJoao->getSaldo() . "<br>";
+echo "Titular da conta: " . $contaMaria->getTitular() . "<br>";
+
+var_dump($contaJoao);
+echo  "<br>";
+$contaJoao->setNumero("00000");
+var_dump($contaJoao);
+echo  "<br>";
