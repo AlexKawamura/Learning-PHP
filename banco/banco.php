@@ -52,10 +52,22 @@ foreach ($contasCorrentes as $cpf => $conta) {
 echo "\nUSO DA FUNCAO LIST\n";
 //$idadeList = [21, 23, 19, 25, 30, 41, 18];
 //
-//list($idadeVinicius, $idadeJoao, $idadeMaria) = $idadeList;
+//list($idadeVinicius, , $idadeMaria) = $idadeList;
 
 foreach ($contasCorrentes as $cpf => $conta) {
 //  list('titular' => $titular, 'saldo' => $saldo) = $conta;
+    ['titular' => $titular, 'saldo' => $saldo] = $conta;
+
+    echo exibeMensagem(
+        "$cpf $titular $saldo"
+    );
+}
+
+//REMOVENDO UM DADO
+echo "\nREMOVENDO UM DADO\n";
+unset($contasCorrentes['123.456.689-11']);
+
+foreach ($contasCorrentes as $cpf => $conta) {
     ['titular' => $titular, 'saldo' => $saldo] = $conta;
 
     echo exibeMensagem(
