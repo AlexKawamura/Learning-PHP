@@ -17,12 +17,12 @@ class contaCorrente {
     }
 
     //MÉTODOS
-    public function sacar($valor){
+    public function sacar($valor) {
         $this->saldo = $this->saldo - $valor;
         return $this; //Retorna a própria classe
     }
 
-    public function depositar($valor){
+    public function depositar($valor) {
         $this->saldo = $this->saldo + $valor;
         return $this; //Retorna a própria classe
     }
@@ -43,10 +43,30 @@ class contaCorrente {
 
 //  MÉTODOS MÁGICOS, GETTERS E SETTERS
     public function __get($atributo) {
+        $this->verifyAtributo($atributo); //Chamada de um método privado
         return $this->$atributo;
     }
 
     public function __set($atributo, $valor) {
-        return $this->$atributo = $valor;
+        $this->verifyAtributo($atributo); //Chamada de um método privado
+        $this->$atributo = $valor;
+    }
+
+//  MÉTODOS PRIVADOS OU ENCAPSULAMENTO DE MÉTODOS
+    private function verifyAtributo($atributo) {
+        if ($atributo == "titular" || $atributo == "saldo") {
+            throw new Exception("O atributo $atributo não pode ser alterado");
+        }
+    }
+
+    private function formataSaldo() {
+        return "R$ " .
+            number_format(
+                $this->saldo, 2, ",", "."
+            );
+    }
+
+    public function getSaldo() {
+        return $this->formataSaldo(); //Chamada de um método privado
     }
 }

@@ -2,6 +2,7 @@
 
 require_once "contaCorrente.php";
 
+//ATRIBUINDO VALORES PARA O CONSTRUCT
 $contaJoao = new contaCorrente(
     "Joao", "1212", "343477-9", 2000.00
 );
@@ -9,6 +10,7 @@ $contaMaria = new contaCorrente(
     "Maria", "1212", "343432-9", 6000.00
 );
 
+//ATRIBUINDO VALORES PARA O CONSTRUCT
 //$contaJoao->titular = "Joao";
 //$contaJoao->agencia = "1212";
 //$contaJoao->numero = "343434-4";
@@ -22,8 +24,7 @@ $contaMaria = new contaCorrente(
 //UTILIZANDO MÉTODO COM RETURN THIS
 var_dump($contaJoao);
 echo "<br>";
-//Possível apenas com return $this
-$contaJoao->sacar(400.90)->depositar(30.90);
+$contaJoao->sacar(400.90)->depositar(30.90); //Possível apenas com return $this
 var_dump($contaJoao);
 echo  "<br>";
 
@@ -45,8 +46,13 @@ echo  "<br>";
 //echo  "<br>";
 
 //USANDO MÉTODOS MÁGICOS GETTER E SETTER
-echo $contaMaria->titular . "<br>";
+echo "Numero da Maria: $contaMaria->numero" . "<br>";
+//
+//Tentativa de alterar um atributo privado
+//echo "Saldo do João: $contaJoao->saldo" . "<br>";
+//$contaJoao->saldo = 0;
+//echo "Saldo do João: $contaJoao->saldo" . "<br>";
 
-echo $contaJoao->saldo . "<br>";
-$contaJoao->saldo = 0;
-echo $contaJoao->saldo . "<br>";
+//CHAMADA DE UM MÉTODO PÚBLICO QUE UTILIZA ENCAPSULAMENTO
+echo "Saldo de João formatado: " . $contaJoao->getSaldo();
+
