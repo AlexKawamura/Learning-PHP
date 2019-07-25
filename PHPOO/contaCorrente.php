@@ -69,4 +69,16 @@ class contaCorrente {
     public function getSaldo() {
         return $this->formataSaldo(); //Chamada de um método privado
     }
+
+//  PASSAGEM DE PARÂMETRO POR REFERÊNCIA NULL
+//  public function transferir($valor, $conta) {
+//      $this->sacar($valor);
+//      $conta->depositar($valor);
+//      return $this;
+//  }
+    public function transferir(float $valor, ContaCorrente $conta):ContaCorrente {
+        $this->sacar($valor);
+        $conta->depositar($valor);
+        return $this;
+    }
 }

@@ -46,7 +46,8 @@ echo  "<br>";
 //echo  "<br>";
 
 //USANDO MÉTODOS MÁGICOS GETTER E SETTER
-echo "Numero da Maria: $contaMaria->numero" . "<br>";
+echo "<br>USANDO MÉTODOS MÁGICOS GETTER E SETTER <br>";
+echo "Numero da Maria: $contaMaria->numero . <br>";
 //
 //Tentativa de alterar um atributo privado
 //echo "Saldo do João: $contaJoao->saldo" . "<br>";
@@ -54,5 +55,15 @@ echo "Numero da Maria: $contaMaria->numero" . "<br>";
 //echo "Saldo do João: $contaJoao->saldo" . "<br>";
 
 //CHAMADA DE UM MÉTODO PÚBLICO QUE UTILIZA ENCAPSULAMENTO
-echo "Saldo de João formatado: " . $contaJoao->getSaldo();
+echo "<br> CHAMADA DE UM MÉTODO PÚBLICO QUE UTILIZA ENCAPSULAMENTO <br>";
+echo "Saldo de João formatado: " . $contaJoao->getSaldo() . "<br>";
+
+//PASSAGEM DE PARÂMETRO NULL E DEFINIDA
+echo "<br> PASSAGEM DE PARÂMETRO NULL E DEFINIDA <br>";
+echo "Saldo do João: ".$contaJoao->getSaldo() . "<br>";
+echo "Saldo da Maria: ".$contaMaria->getSaldo() . "<br>";
+$contaJoao->transferir('20.00', $contaMaria);
+echo "Transferindo...<br>";
+echo "Saldo do João: ".$contaJoao->getSaldo() . "<br>";
+echo "Saldo da Maria: ".$contaMaria->getSaldo() . "<br>";
 
