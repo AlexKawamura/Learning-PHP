@@ -43,21 +43,23 @@ class contaCorrente {
 
 //  MÉTODOS MÁGICOS, GETTERS E SETTERS
     public function __get($atributo) {
-        $this->verifyAtributo($atributo); //Chamada de um método privado
+        validacao::verifyAtributo($atributo); //Uso de método estático em outra classe
+        //$this->verifyAtributo($atributo); Chamada de um método privado (line: 58)
         return $this->$atributo;
     }
 
     public function __set($atributo, $valor) {
-        $this->verifyAtributo($atributo); //Chamada de um método privado
+        validacao::verifyAtributo($atributo); //Uso de método estático em outra classe
+        //$this->verifyAtributo($atributo); Chamada de um método privado (line: 58)
         $this->$atributo = $valor;
     }
 
 //  MÉTODOS PRIVADOS OU ENCAPSULAMENTO DE MÉTODOS
-    private function verifyAtributo($atributo) {
-        if ($atributo == "titular" || $atributo == "saldo") {
-            throw new Exception("O atributo $atributo não pode ser alterado");
-        }
-    }
+//  private function verifyAtributo($atributo) {
+//      if ($atributo == "titular" || $atributo == "saldo") {
+//          throw new Exception("O atributo $atributo não pode ser acessado");
+//      }
+//  }
 
     private function formataSaldo() {
         return "R$ " .
@@ -71,11 +73,13 @@ class contaCorrente {
     }
 
 //  PASSAGEM DE PARÂMETRO POR REFERÊNCIA NULL
+//  Passagem por referência nula
 //  public function transferir($valor, $conta) {
 //      $this->sacar($valor);
 //      $conta->depositar($valor);
 //      return $this;
 //  }
+//  Passagem por tipos definidos
     public function transferir(float $valor, ContaCorrente $conta):ContaCorrente {
         $this->sacar($valor);
         $conta->depositar($valor);

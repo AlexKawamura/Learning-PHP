@@ -1,13 +1,14 @@
 <?php
 
+require_once "validacao.php";
 require_once "contaCorrente.php";
 
 //ATRIBUINDO VALORES PARA O CONSTRUCT
 $contaJoao = new contaCorrente(
-    "Joao", "1212", "343477-9", 2000.00
+"Joao", "1212", "343477-9", 2000.00
 );
 $contaMaria = new contaCorrente(
-    "Maria", "1212", "343432-9", 6000.00
+"Maria", "1212", "343432-9", 6000.00
 );
 
 //ATRIBUINDO VALORES PARA O CONSTRUCT
@@ -26,7 +27,7 @@ var_dump($contaJoao);
 echo "<br>";
 $contaJoao->sacar(400.90)->depositar(30.90); //Possível apenas com return $this
 var_dump($contaJoao);
-echo  "<br>";
+echo "<br>";
 
 //UTILIZANDO MÉTODO SEM RETURN THIS
 //var_dump($contaJoao);
@@ -67,3 +68,7 @@ echo "Transferindo...<br>";
 echo "Saldo do João: ".$contaJoao->getSaldo() . "<br>";
 echo "Saldo da Maria: ".$contaMaria->getSaldo() . "<br>";
 
+echo "Numero da conta Maria: " . $contaMaria->numero . "<br>";
+echo "Saldo da conta João: ";
+echo $contaJoao->saldo;
+//echo validacao::verifyAtributo("saldo"); Chamando método estático de outra classe
