@@ -1,5 +1,6 @@
 <?php
 ini_set("display_errors",1);
+echo "<pre>";
 //autoload.php -> Arquivo responsável por incluir todas as classes que serão utilizadas
 require_once "autoload.php";
 
@@ -18,7 +19,25 @@ $designer = new Design("222.222.222-22", 2000.00);
 //será criado um novo atributo publico.
 //$diretor->salario = 1;
 //Deve-se usar o modificador protected, junto com um método modificador
-$designer->modifySalario(1500.00);
+$designer->modifySalario(30000.00);
+
+echo "Salario do designer: " . $designer->salario . "<br>";
+echo "Salario do designer: " . $diretor->salario . "<br>";
+
+//Ambos recebem a mesma quantia de bonificação,
+//caso deseje que seja diferente é usa-se o polimorfismo
+echo "Bonificação do designer: " . $designer->getBonificacao() . "<br>";
+echo "Bonificação do diretor: " . $diretor->getBonificacao() . "<br>";
+
+//Polimorfismo na classe Designer, dando aumentos diferentes para os funcionarios
+echo "Aumento no salario do designer: " . $designer->aumentarSalario() . "<br>";
+echo "Aumento no salario do diretor: " . $diretor->aumentarSalario() . "<br>";
+
+$diretor->senha = "pass123";
+echo "Autenticando senha: ";
+var_dump($diretor->autenticar("pass123"));
+echo "Autenticando senha: ";
+var_dump($diretor->autenticar("pass13"));
 
 var_dump($diretor);
 var_dump($designer);
