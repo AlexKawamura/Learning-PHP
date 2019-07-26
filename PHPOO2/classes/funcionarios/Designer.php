@@ -1,6 +1,11 @@
 <?php
 namespace classes\funcionarios;
 
-class Designer {
+use classes\abstratas\Funcionario;
 
+//extends -> Herança
+class Designer extends Funcionario {
+    public function modifySalario($valor){
+        $this->salario = $valor;
+    }
 }
