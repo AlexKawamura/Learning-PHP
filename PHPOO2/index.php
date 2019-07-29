@@ -12,10 +12,11 @@ use classes\funcionarios\Diretor;
  * por exemplo quando existirem duas classes de mesmo nome porém diretórios diferentes */
 use classes\funcionarios\Designer as Design;
 use classes\sistemaInterno\GerenciadorBonificacao;
+use classes\abstratas\Funcionario;
 
 $diretor = new Diretor("111.111.111-11", 30000.00);
 /* Usando o apelido Desing dado anteriormente */
-$designer = new Design("222.222.222-22", 2000.00);
+$designer = new Design("222.222.222-22", null);
 /* É possível criar uma instância direto da classe Funcionario,
  * sem atribuir um cargo para o funcionario,
  * para impedir isso declaramos a classe Funcionario como abstrata*/
@@ -60,6 +61,11 @@ var_dump($diretor->autenticar("pass123"));
 echo "Autenticando senha: ";
 var_dump($diretor->autenticar("pass13"));
 echo "\n";
+
+Funcionario::setPiso(4000.00);
+/* Fazendo uso de sobrecarga no método (Implementado de forma diferente) */
+$diretor = new Diretor("111.111.111-11", 30000.00);
+$designer = new Design("222.222.222-22", null);
 
 var_dump($diretor);
 var_dump($designer);
