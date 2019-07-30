@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1); /* Declaração explicada da classe ArrayUtils */
 
 echo "<h2>CALCULADORA DE MÉDIA</h2>";
 
@@ -41,3 +41,23 @@ foreach ($arrayNomes as $nome) {
 $stringNomes = implode(", ", $arrayNomes);
 
 echo "$stringNomes";
+/*-----------------------------------------------------------------------------------*/
+echo "<h2>REMOÇÃO DE ELEMENTOS, TYPE JUGGLING E TIPAGEM ESTRITA</h2>";
+
+require_once "ArrayUtils.php";
+
+$correntistas_e_compras = [
+    "Giovanni",
+    12,
+    "Maria",
+    25,
+    "Luis",
+    "Luísa",
+    "12"
+];
+
+echo "<pre>";
+var_dump ($correntistas_e_compras);
+ArrayUtils::remover(12, $correntistas_e_compras);
+var_dump($correntistas_e_compras);
+echo "</pre>";
