@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d51ee1dd-8af8-4b50-b294-5551bae9edea" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="php" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\DIPROSI-ESTAGIO-03\Documents\php\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1OgUtjTJoPMF8jCJHthKtJxvK4k" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\DIPROSI-ESTAGIO-03\Documents\php\banco" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d51ee1dd-8af8-4b50-b294-5551bae9edea" name="Default Changelist" comment="" />
+      <created>1563547583928</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1563547583928</updated>
+      <workItem from="1563547585090" duration="682000" />
+      <workItem from="1563793764129" duration="10788000" />
+      <workItem from="1563807608169" duration="1340000" />
+      <workItem from="1563880587420" duration="13124000" />
+      <workItem from="1563966585766" duration="13314000" />
+      <workItem from="1564053028203" duration="11949000" />
+      <workItem from="1564139145991" duration="13723000" />
+      <workItem from="1564398750173" duration="45000" />
+      <workItem from="1564398955074" duration="9043000" />
+      <workItem from="1564484900858" duration="8531000" />
+    </task>
+    <task id="LOCAL-00001" summary="Teste">
+      <created>1563891153276</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1563891153276</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Separando funções em arquivo e importando">
+      <created>1563892998248</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1563892998248</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Usando LIST">
+      <created>1563895132600</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1563895132600</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Remover um dado usando UNSET">
+      <created>1563967461213</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1563967461213</updated>
+    </task>
+    <task id="LOCAL-00005" summary="PHP na web com HTML">
+      <created>1563973408551</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1563973408551</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TodoView" selected-index="3">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Teste" />
+    <MESSAGE value="Separando funções em arquivo e importando" />
+    <MESSAGE value="Usando LIST" />
+    <MESSAGE value="Remover um dado usando UNSET" />
+    <MESSAGE value="PHP na web com HTML" />
+    <option name="LAST_COMMIT_MESSAGE" value="PHP na web com HTML" />
+  </component>
+</project>
