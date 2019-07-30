@@ -1,8 +1,10 @@
 <?php declare(strict_types=1); /* Declaração explicada da classe ArrayUtils */
 
-echo "<h2>CALCULADORA DE MÉDIA</h2>";
+namespace Alura;
 
-require_once "Calculadora.php";
+require "autoload.php";
+
+echo "<h2>CALCULADORA DE MÉDIA</h2>";
 
 $notas = [];
 
@@ -43,8 +45,6 @@ $stringNomes = implode(", ", $arrayNomes);
 echo "$stringNomes";
 /*-----------------------------------------------------------------------------------*/
 echo "<h2>REMOÇÃO DE ELEMENTOS, TYPE JUGGLING E TIPAGEM ESTRITA</h2>";
-
-require_once "ArrayUtils.php";
 
 $correntistas_e_compras = [
     "Giovanni",

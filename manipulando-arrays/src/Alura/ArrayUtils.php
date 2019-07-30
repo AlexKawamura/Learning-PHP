@@ -1,5 +1,7 @@
 <?php declare(strict_types=1);
 
+namespace Alura;
+
 class ArrayUtils {
     /* Ao passar uma variável do tipo inteiro como argumento de $elemento,
      * o PHP realiza a conversão automaticamente para string, removendo o elemento errado,

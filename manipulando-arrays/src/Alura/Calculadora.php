@@ -1,5 +1,7 @@
 <?php
 
+namespace Alura;
+
 class Calculadora {
     /* ? -> Indica que o método pode retornar float ou nulo */
     public function calculaMedia(array $notas):?float {
