@@ -28,4 +28,14 @@ class ArrayUtils {
             echo "Não foi encontrado no array";
         }
     }
+
+    public static function maiorSaldo(int $saldo, array $array):array {
+        $correntitasComSaldoMaior = array();
+        foreach ($array as $chave => $valor) {
+            if ($valor > $saldo) {
+                $correntitasComSaldoMaior[] = $chave;
+            }
+        }
+        return $correntitasComSaldoMaior;
+    }
 }

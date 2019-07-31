@@ -61,3 +61,53 @@ var_dump ($correntistas_e_compras);
 ArrayUtils::remover(12, $correntistas_e_compras);
 var_dump($correntistas_e_compras);
 echo "</pre>";
+/*-----------------------------------------------------------------------------------*/
+echo "<h2>ARRAYS ASSOCIATIVOS</h2>";
+
+$correntistas = ["Giovanni", "João", "Maria", "Luis", "Luisa", "Rafael"];
+$correntistasNaoPagantes = ["Luis", "Luisa", "Rafael",];
+$saldos = [2500, 3000, 4400, 1000, 8700, 9000];
+
+$array_associativo = [
+    "Giovanni" => 2500,
+    "João" => 3000,
+    "Maria" => 4400
+];
+
+/* array_diff -> Retorna um array contendo os elementos diferentes entre dois arrays */
+$correntistasPagantes = array_diff($correntistas, $correntistasNaoPagantes);
+
+echo "<pre>";
+var_dump ($correntistasPagantes);
+echo "</pre>";
+
+/* array_merge -> Junta dois arrays em um só, contudo ele apenas adiciona um array em
+ * outro, ele não faz a associação entre os arrays */
+$relacionados = array_merge($correntistas, $saldos);
+
+echo "<pre>";
+var_dump ($relacionados);
+echo "</pre>";
+
+/* array_combine -> Faz a associação entre os arrays, transformando um deles em chaves */
+$combinados = array_combine($correntistas, $saldos);
+
+$combinados["Matheus"] = 4500;
+
+echo "<pre>";
+var_dump ($combinados);
+echo "</pre>";
+
+echo "O saldo do Giovanni é: {$combinados["Giovanni"]}";
+
+if(array_key_exists("Joao", $combinados)){
+    echo "<p>O saldo do João é: {$combinados["Joao"]}</p>";
+} else {
+    echo "<p>Nao foi encontrado</p>";
+}
+
+$maiores = ArrayUtils::maiorSaldo(3000, $combinados);
+
+echo "<pre>";
+var_dump ($maiores);
+echo "</pre>";
