@@ -7,4 +7,9 @@ class Validacao {
             throw new Exception("O atributo $atributo não pode ser acessado");
         }
     }
+    public static function ehNumero($valor) {
+        if(!is_numeric($valor)) {
+            throw new \Exception("<p>O tipo passado não é um número válido!</p>");
+        }
+    }
 }

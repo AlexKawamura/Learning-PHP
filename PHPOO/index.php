@@ -1,7 +1,15 @@
 <?php
 
-require_once "validacao.php";
-require_once "contaCorrente.php";
+use Exceptions\SaldoInsuficienteException;
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+header('Content-Type: text/html; charset=utf-8');
+
+include "autoload.php";
+
+echo "<pre>";
 
 //ATRIBUINDO VALORES PARA O CONSTRUCT
 $contaJoao = new contaCorrente(
@@ -9,6 +17,25 @@ $contaJoao = new contaCorrente(
 );
 $contaMaria = new contaCorrente(
 "Maria", "1212", "343432-9", 6000.00
+);
+$contaJoana = new ContaCorrente(
+    "Joana","1212","343423-9",100.00
+);
+
+$contaJosefa = new ContaCorrente(
+    "josefa","1212","343423-9",100.00
+);
+
+$contaJosenilda = new ContaCorrente(
+    "Josenilda","1212","343423-9",100.00
+);
+
+$contaFernanda = new ContaCorrente(
+    "Fernanda","1212","3434234-9",100.00
+);
+
+$contaBernardo = new ContaCorrente(
+    "Bernardo","1212","3434235-9",100.00
 );
 
 //ATRIBUINDO VALORES PARA O CONSTRUCT
@@ -63,12 +90,30 @@ echo "Saldo de João formatado: " . $contaJoao->getSaldo() . "<br>";
 echo "<br> PASSAGEM DE PARÂMETRO NULL E DEFINIDA <br>";
 echo "Saldo do João: ".$contaJoao->getSaldo() . "<br>";
 echo "Saldo da Maria: ".$contaMaria->getSaldo() . "<br>";
-$contaJoao->transferir('20.00', $contaMaria);
+try {
+    $contaJoao->transferir("werew", $contaMaria);
+} catch(\Exception $e) {
+    echo "Capturado erro 1";
+    echo $e->getMessage();
+} catch(\InvalidArgumentException $iae) {
+    echo "Capturado erro 2";
+    echo $e->getMessage();
+}
 echo "Transferindo...<br>";
 echo "Saldo do João: ".$contaJoao->getSaldo() . "<br>";
 echo "Saldo da Maria: ".$contaMaria->getSaldo() . "<br>";
 
 echo "Numero da conta Maria: " . $contaMaria->numero . "<br>";
 echo "Saldo da conta João: ";
-echo $contaJoao->saldo;
+//echo $contaJoao->saldo;
 //echo validacao::verifyAtributo("saldo"); Chamando método estático de outra classe
+try{
+
+    $contaJoao->sacar(50000);
+
+}catch(SaldoInsuficienteException $e){
+    echo "<p>" . $e->getMessage()." Saldo disponível: ".$e->saldo." Valor do saque: ".$e->saque . "</p>";
+    var_dump($e);
+
+}
+var_dump(ContaCorrente::calculaTaxaOperacao());

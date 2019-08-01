@@ -1,12 +1,16 @@
 <?php
 
-class contaCorrente {
+use Exceptions\SaldoInsuficienteException;
+
+class ContaCorrente {
     //PRIVATE: Não é mais possível acessa-lo de fora da classe,
     //apenas a própria classe pode alterá-lo.
     private $titular;
     private $agencia;
     private $numero;
     private $saldo;
+    private static $taxaOperacao;
+    private static $totalContasCriadas;
 
     //CONSTRUTOR
     public function __construct($titular, $agencia, $numero, $saldo) {
@@ -18,6 +22,11 @@ class contaCorrente {
 
     //MÉTODOS
     public function sacar($valor) {
+        if($this->saldo <= 0 || $this->saldo < $valor){
+            $this->contadorSaquesNaoPermitidos ++;
+            throw new SaldoInsuficienteException("<p>O saldo é insuficiente!</p>", $this->saldo, $valor);
+
+        }
         $this->saldo = $this->saldo - $valor;
         return $this; //Retorna a própria classe
     }
@@ -43,13 +52,13 @@ class contaCorrente {
 
 //  MÉTODOS MÁGICOS, GETTERS E SETTERS
     public function __get($atributo) {
-        validacao::verifyAtributo($atributo); //Uso de método estático em outra classe
+        Validacao::verifyAtributo($atributo); //Uso de método estático em outra classe
         //$this->verifyAtributo($atributo); Chamada de um método privado (line: 58)
         return $this->$atributo;
     }
 
     public function __set($atributo, $valor) {
-        validacao::verifyAtributo($atributo); //Uso de método estático em outra classe
+        Validacao::verifyAtributo($atributo); //Uso de método estático em outra classe
         //$this->verifyAtributo($atributo); Chamada de um método privado (line: 58)
         $this->$atributo = $valor;
     }
@@ -80,9 +89,27 @@ class contaCorrente {
 //      return $this;
 //  }
 //  Passagem por tipos definidos
-    public function transferir(float $valor, ContaCorrente $conta):ContaCorrente {
+    public function transferir($valor, ContaCorrente $conta):ContaCorrente {
+        Validacao::ehNumero(($valor));
+        if($valor <= 0){
+            throw new \InvalidArgumentException("<p>Valor inválido para transferencia</p>");
+        }
         $this->sacar($valor);
         $conta->depositar($valor);
         return $this;
     }
+
+    public static function calculaTaxaOperacao() {
+        try {
+            if(self::$totalContasCriadas < 1) {
+                throw new \DivisionByZeroError("<p>Não é possível realizar divisão por zero!</p>");
+            }
+            self::$taxaOperacao = (30 / self::$totalContasCriadas);
+        } catch(\DivisionByZeroError $error) {
+            echo $error->getMessage()."<br>";
+            exit;
+        }
+    }
+
+
 }
